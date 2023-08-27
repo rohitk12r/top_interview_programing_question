@@ -17,7 +17,7 @@ public class FindDuplicateNumber {
 	}
 
 	// Using Java 1.8 to find the duplicate
-	public static int findDuplicateNumberByJava1_8(int[] a) {
+	private static int findDuplicateNumberByJava1_8(int[] a) {
 		Map<Integer, Long> map = Arrays.stream(a).boxed()
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
@@ -29,7 +29,7 @@ public class FindDuplicateNumber {
 		return duplicate;
 	}
 
-	public static int findDuplicateNumber(int[] a) {// Time complexity is O(n) and Space complexity O(n)
+	private static int findDuplicateNumber(int[] a) {// Time complexity is O(n) and Space complexity O(n)
 		Set<Integer> set = new HashSet<>();
 		for (int v : a) {
 			if (!set.add(v)) {
